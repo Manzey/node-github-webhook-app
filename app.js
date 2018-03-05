@@ -36,8 +36,8 @@ app.use(function (err, req, res, next) {
   res.status(500).send('Sorry, something is broken!')
 })
 
-let server = app.listen(80, function () {
-  console.log('App listening on port 80!')
+let server = app.listen(8080, function () {
+  console.log('App listening on port 8080!')
 })
 
 let io = socket(server)
