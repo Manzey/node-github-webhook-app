@@ -3,6 +3,7 @@ let path = require('path')
 let bodyParser = require('body-parser')
 let router = require('./routes/index')
 let exphbs = require('express-secure-handlebars')
+var socket = require('socket.io');
 let app = express()
 
 app.engine('.hbs', exphbs({
@@ -35,6 +36,16 @@ app.use(function (err, req, res, next) {
   res.status(500).send('Sorry, something is broken!')
 })
 
-app.listen(8000, function () {
-  console.log('App listening on port 8000!')
+let server = app.listen(80, function () {
+  console.log('App listening on port 80!')
+})
+
+let io = socket(server)
+
+io.on('connection', (socket) => {
+  console.log('Client connected!')
+
+  socket.on('disconnect', function(){
+    console.log('User disconnected');
+  });
 })

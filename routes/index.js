@@ -15,8 +15,9 @@ router.get('/', (req, res) => {
   if (err) {
     console.error(err)
   } else {
-    console.log(data[0])
+   // console.log(data[0])
   res.render('issues/viewIssues', {issues: data})
+
   }
 })
 })
