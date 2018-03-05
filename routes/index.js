@@ -10,7 +10,7 @@ let client = github.client(process.env.GITHUB_TOKEN);
 * Learning the API
 */
 router.get('/', (req, res) => {
-  let repo = client.repo('ESX-org/es_extended')
+  let repo = client.repo('1dv023/dl222is-examination-3')
   repo.issues((err, data) => {
   if (err) {
     console.error(err)
