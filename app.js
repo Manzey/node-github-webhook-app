@@ -15,7 +15,8 @@ app.engine('.hbs', exphbs({
       } else {
         return options.inverse(this)
       }
-    }
+    },
+    dateFormat: require('handlebars-dateformat')
   }
 }))
 app.set('view engine', '.hbs')

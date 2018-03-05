@@ -13,10 +13,11 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "express-secure-handlebars": "^2.1.0",
-    "git": "^0.1.5",
+    "handlebars-dateformat": "^1.1.1",
     "nodemon": "^1.14.12",
     "octonode": "^0.9.1",
     "socket.io": "^2.0.4",
-    "standard": "^10.0.3"
+    "standard": "^10.0.3",
+    "dotenv": "^5.0.1"
   }
 }

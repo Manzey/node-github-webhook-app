@@ -1,3 +1,20 @@
-<div>
-Hello world!
+<div id="wrapper">
+    <div id="issues">
+        {{#if issues }}
+        <dl id="issueList">
+            {{#each issues}}
+                <div id="issueBox">
+                    <div class="centerText">
+                    <a href={{this.html_url}}>{{this.user.login}}</a><br>
+                    {{this.title}}<br>
+                    </div>
+                    <div class="bottomLeft">                    
+                    Created at: {{dateFormat this.created_at "YYYY-MM-DD, h:mm a"}}<br>
+                    Updated at: {{dateFormat this.updated_at "YYYY-MM-DD, h:mm a"}}
+                    </div>
+                </div>
+            {{/each}}
+        </dl>
+        {{/if}}  
+    </div>
 </div>
