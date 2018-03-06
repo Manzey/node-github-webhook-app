@@ -5,8 +5,12 @@ window.onload=function() {
 
     let socket = io.connect()
     socket.on('incoming', (event) => {
-        console.log('Hej')
-        console.log(event.headers)
-	console.log(event.body)
+        let body = event.body
+        if (body.action == "opened") {
+            console.log(body.issue.user.login)
+            console.log(body.issue.title)
+            console.log(body.issue.created_at)
+            console.log(body.issue.updated_at)
+        }
     })
 }
