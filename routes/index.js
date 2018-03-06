@@ -27,7 +27,8 @@ router.get('/', (req, res) => {
 
 router.post('/webhook', (req, res) => {
     let io = req.app.io
-    io.emit('incoming', req)
+    console.log(req)
+    console.log(res)
 })
 
 
