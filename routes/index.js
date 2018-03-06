@@ -17,4 +17,9 @@ router.get('/', (req, res) => {
 })
 })
 
+router.post('/post', (req, res) => {
+  console.log(req)
+  console.log(res)
+})
+
 module.exports = router
