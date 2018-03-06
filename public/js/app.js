@@ -4,9 +4,8 @@ window.onload=function() {
     })
 
     let socket = io.connect()
-    socket.onmessage = (event) => {
+    socket.on('incoming', (event) => {
+        console.log('Hej')
         console.log(event)
-        console.log(event.req)
-        console.log(event.res)
-    }
+    })
 }

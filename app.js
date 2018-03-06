@@ -41,15 +41,4 @@ let server = app.listen(8080, function () {
 })
 
 let io = socket(server)
-
-io.on('connection', (socket) => {
-  console.log('Client connected!')
-
-  app.post('/webhook', (req, res) => {
-    socket.send(req, res)
-  })
-
-  socket.on('disconnect', function(){
-    console.log('User disconnected');
-  });
-})
+app.io = io
