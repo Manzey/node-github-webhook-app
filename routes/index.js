@@ -4,11 +4,6 @@ let router = express.Router()
 let github = require('octonode');
 let client = github.client(process.env.GITHUB_TOKEN);
 
-
-
-/*
-* Learning the API
-*/
 router.get('/', (req, res) => {
   let repo = client.repo('1dv023/dl222is-examination-3')
   repo.issues((err, data) => {
