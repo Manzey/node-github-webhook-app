@@ -3,6 +3,7 @@ let express = require('express')
 let router = express.Router()
 let github = require('octonode');
 let client = github.client(process.env.GITHUB_TOKEN);
+let app = require('../app')
 
 router.get('/', (req, res) => {
   let repo = client.repo('1dv023/dl222is-examination-3')
@@ -16,7 +17,7 @@ router.get('/', (req, res) => {
     }
   })
 
-  req.app.io.on('connection', (socket) => {
+  app.io.on('connection', (socket) => {
     console.log('Client connected!')
   
     socket.on('disconnect', function(){
@@ -26,11 +27,7 @@ router.get('/', (req, res) => {
 })
 
 router.post('/webhook', (req, res) => {
-    let io = req.app.io
-    io.on('connection', (socket) => {
-      console.log('Post connected!')
-      socket.emit('incoming', res)
-    })
+  app.io.emit('incoming', req)
 })
 
 module.exports = router

@@ -41,4 +41,4 @@ let server = app.listen(8080, function () {
 })
 
 let io = socket(server)
-app.io = io
+module.exports.io = io
