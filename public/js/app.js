@@ -6,6 +6,7 @@ window.onload=function() {
     let socket = io.connect()
     socket.on('incoming', (event) => {
         console.log('Hej')
-        console.log(event)
+        console.log(event.headers)
+	console.log(event.body)
     })
 }

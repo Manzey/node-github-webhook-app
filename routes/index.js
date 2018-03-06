@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
     }
   })
 
-  app.io.on('connection', (socket) => {
+  app.io.once('connection', (socket) => {
     console.log('Client connected!')
   
     socket.on('disconnect', function(){
@@ -27,7 +27,8 @@ router.get('/', (req, res) => {
 })
 
 router.post('/webhook', (req, res) => {
-  app.io.emit('incoming', req)
+  let data = {headers: req.headers, body: req.body}
+  app.io.emit('incoming', data)
 })
 
 module.exports = router
