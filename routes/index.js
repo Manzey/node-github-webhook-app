@@ -27,10 +27,10 @@ router.get('/', (req, res) => {
 
 router.post('/webhook', (req, res) => {
     let io = req.app.io
-    console.log(req)
-    console.log(res)
+    io.on('connection', (socket) => {
+      console.log('Post connected!')
+      socket.emit('incoming', res)
+    })
 })
-
-
 
 module.exports = router
