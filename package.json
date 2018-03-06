@@ -11,14 +11,14 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
     "express": "^4.16.2",
     "express-secure-handlebars": "^2.1.0",
+    "github-express-webhook-verifying": "^1.1.0",
     "handlebars-dateformat": "^1.1.1",
     "nodemon": "^1.14.12",
     "octonode": "^0.9.1",
     "socket.io": "^2.0.4",
-    "standard": "^10.0.3",
-    "dotenv": "^5.0.1",
-    "verify-github-webhook": "^1.0.1"
+    "standard": "^10.0.3"
   }
 }

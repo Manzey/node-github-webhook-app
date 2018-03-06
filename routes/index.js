@@ -3,8 +3,8 @@ let express = require('express')
 let router = express.Router()
 let github = require('octonode');
 let client = github.client(process.env.GITHUB_TOKEN);
-let githubverify = require('verify-github-webhook')
 let app = require('../app')
+let verifyGithubWebhook = require('github-express-webhook-verifying')
 
 router.get('/', (req, res) => {
   let repo = client.repo('1dv023/dl222is-examination-3')
@@ -27,11 +27,9 @@ router.get('/', (req, res) => {
   })
 })
 
-router.post('/webhook', (req, res) => {
+router.post('/webhook', verifyGithubWebhook(process.env.GITHUB_SECRET), (req, res) => {
   let data = {headers: req.headers, body: req.body}
-  if (verifyGithubWebhook(req.headers.get('X-Hub-Signature'), req.body, process.env.GITHUB_SECRET)) {
-    app.io.emit('incoming', data)
-  }
+      app.io.emit('incoming', data)
 })
 
 module.exports = router
