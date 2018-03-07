@@ -1,9 +1,4 @@
-window.onload=function() {  
-    
-    document.getElementById("issues").addEventListener("click",() => {
-        notify('Issue opened!', 'body.issue.html_url', 'body.issue.title', 'body.issue.user.login')       
-    })
-
+window.onload=function() {
     let socket = io.connect()
     socket.on('incoming', (event) => {
         let body = event.body
@@ -23,13 +18,13 @@ window.onload=function() {
             if (body.action == "reopened")
             notify('Issue reopened!', body.issue.html_url, body.issue.title, body.issue.user.login)
         } else if (body.action == "closed") {
+            notify('Issue closed!', body.issue.html_url, body.issue.title, body.issue.user.login)
             let parent = document.getElementById('issueList')
             let children = parent.getElementsByTagName('div')
             for (child of children)  {
                 if (child.className === "issueBox") {
                     if (child.querySelector('#issueLink').href === body.issue.html_url) {
                         parent.removeChild(child)
-                        notify('Issue closed!', body.issue.html_url, body.issue.title, body.issue.user.login)
                     }
                 }
             }

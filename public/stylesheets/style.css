@@ -78,6 +78,7 @@ body {
 #notificationList {
     padding-left: 5%;
     width: 90%;
+    max-width: 90%;
     height: 80%;
     overflow: auto;
 }
@@ -86,6 +87,7 @@ body {
     display: inline-block;
     background-color: rgba(182, 190, 202, 0.7);
     width: 80%;
+    max-width: 80%;
     height: 20%;
     display: table;
     margin-left: auto;
