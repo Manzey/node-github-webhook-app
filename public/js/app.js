@@ -17,13 +17,13 @@ window.onload=function() {
             clone.getElementById('issueTitle').innerHTML = body.issue.title
             clone.getElementById('issueCreated').innerHTML = moment(body.issue.created_at).format('YYYY-MM-DD, h:mm a')
             clone.getElementById('issueUpdated').innerHTML = moment(body.issue.updated_at).format('YYYY-MM-DD, h:mm a')
-            issueList.insertAdjacentElement('afterbegin', clone)        
+            issueList.prepend(clone)        
         } else if (body.action == "closed") {
             let parent = document.getElementById('issueList')
             let children = parent.getElementsByTagName('div')
             for (child of children)  {
                 if (child.className === "issueBox") {
-                    if (child.getElementById('issueLink').href === body.issue.html_url) {
+                    if (child.querySelector('#issueLink').href === body.issue.html_url) {
                         parent.removeChild(child)
                     }
                 }
