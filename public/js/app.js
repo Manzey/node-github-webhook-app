@@ -4,8 +4,6 @@ window.onload=function() {
         notify('Issue opened!', 'body.issue.html_url', 'body.issue.title', 'body.issue.user.login')       
     })
 
-
-
     let socket = io.connect()
     socket.on('incoming', (event) => {
         let body = event.body
@@ -31,10 +29,11 @@ window.onload=function() {
                 if (child.className === "issueBox") {
                     if (child.querySelector('#issueLink').href === body.issue.html_url) {
                         parent.removeChild(child)
+                        notify('Issue closed!', body.issue.html_url, body.issue.title, body.issue.user.login)
                     }
                 }
             }
-            notify('Issue closed!', body.issue.html_url, body.issue.title, body.issue.user.login)
+            
         } else if (body.action == "created") {
             notify('New comment!', body.issue.html_url, body.issue.title, body.issue.user.login)
         } else if (body.action == "deleted") {

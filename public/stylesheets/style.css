@@ -1,7 +1,10 @@
 body {
+    font-family: 'Space Mono', monospace;
     background-image: url("../images/background.jpg");
     background-repeat: no-repeat, repeat;
-    background-size: cover
+    background-size: cover;
+    font-size: 0.6vw;
+    white-space: initial;
     }
 
 
@@ -23,11 +26,12 @@ body {
 #issueList {
     padding-left: 5%;
     width: 90%;
-    height: 95%;
+    height: 80%;
     overflow: auto;
 }
 
 .issueBox {
+
     display: inline-block;
     background-color: rgba(182, 190, 202, 0.7);
     width: 80%;
