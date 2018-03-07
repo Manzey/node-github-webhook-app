@@ -3,7 +3,7 @@
         {{#if issues }}
         <dl id="issueList">
             {{#each issues}}
-                <div id="issueBox">
+                <div class="issueBox">
                     <div class="centerText">
                     <a href={{this.html_url}}>{{this.user.login}}</a><br>
                     {{this.title}}<br>
@@ -17,4 +17,16 @@
         </dl>
         {{/if}}  
     </div>
+    <template id="issueTemp">
+        <div class="issueBox">
+                <div class="centerText">
+                    <a href='' id='issueLink'></a><br>
+                    <span id='issueTitle'></span><br>
+                </div>
+                <div class="bottomLeft">                    
+                        Created at: <span id='issueCreated'></span><br>
+                        Updated at: <span id='issueUpdated'></span>
+                </div>
+            </div>
+    </template>
 </div>
