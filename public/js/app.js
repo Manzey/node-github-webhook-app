@@ -14,12 +14,12 @@ window.onload=function() {
             let issueList = document.getElementById('issueList')
             let template = document.getElementById('issueTemp')
             let clone = template.content.cloneNode(true)
-            issueList.appendChild(clone)
             clone.getElementById('issueLink').href = body.issue.url
             clone.getElementById('issueLink').innerHTML = body.issue.user.login
             clone.getElementById('issueTitle').innerHTML = body.issue.title
-            clone.getElementById('issueCreated').innerHTML = body.issue.created_at
-            clone.getElementById('issueUpdated').innerHTML = body.issue.updated_at
-        }
+            clone.getElementById('issueCreated').innerHTML = moment(body.issue.created_at).format('YYYY-MM-DD h:mm a')
+            clone.getElementById('issueUpdated').innerHTML = moment(body.issue.updated_at).format('YYYY-MM-DD h:mm a')
+            issueList.appendChild(clone)        
+}
     })
 }
