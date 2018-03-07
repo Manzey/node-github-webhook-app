@@ -17,6 +17,12 @@
         </dl>
         {{/if}}  
     </div>
+    <div id="notifications">
+        <h2 class="centerText">Notifications: </h2>
+        <dl id="notificationList">
+            
+        </dl>
+    </div>
     <template id="issueTemp">
         <div class="issueBox">
                 <div class="centerText">
@@ -28,5 +34,16 @@
                         Updated at: <span id='issueUpdated'></span>
                 </div>
         </div>
+    </template>
+    <template id="notifyTemp">
+        <div class="notification">
+                <div class="centerText">
+                    <span id="notifyAction"></span><br>
+                    <a href='' id="notifyTitle"></a>
+                </div>
+                <div class="bottomLeft">
+                    User: <span id="notifyUser"></span>
+                </div>
+            </div>
     </template>
 </div>

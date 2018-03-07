@@ -10,6 +10,8 @@ body {
 */
 
 #issues {
+    left: 25%;
+    top: 5%;
     width: 25%;
     height: 50%;
     background-color: rgba(182, 190, 202, 0.6);
@@ -49,3 +51,44 @@ body {
     padding-left: 2%;
     padding-bottom: 2%;
 }
+
+/*
+* Notification css
+*/
+
+/*
+* Issues
+*/
+
+#notifications {
+    right: 25%;
+    top: 5%;
+    width: 15%;
+    height: 50%;
+    background-color: rgba(182, 190, 202, 0.6);
+    border-radius: 25px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);  
+    position: absolute;
+}
+
+#notificationList {
+    padding-left: 5%;
+    width: 90%;
+    height: 80%;
+    overflow: auto;
+}
+
+.notification {
+    display: inline-block;
+    background-color: rgba(182, 190, 202, 0.7);
+    width: 80%;
+    height: 20%;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+    border-style: solid;   
+    position: relative; 
+}
+
+
