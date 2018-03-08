@@ -3,7 +3,7 @@ let path = require('path')
 let bodyParser = require('body-parser')
 let router = require('./routes/index')
 let exphbs = require('express-secure-handlebars')
-var socket = require('socket.io');
+var socket = require('socket.io')
 let app = express()
 
 app.engine('.hbs', exphbs({
