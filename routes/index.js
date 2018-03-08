@@ -28,6 +28,7 @@ router.get('/', (req, res) => {
 router.post('/webhook', verifyGithubWebhook(process.env.GITHUB_SECRET), (req, res) => {
   let data = {headers: req.headers, body: req.body}
   app.io.emit('incoming', data)
+  res.status(200).send('OK')
 })
 
 module.exports = router
