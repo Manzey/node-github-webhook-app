@@ -17,10 +17,9 @@ router.get('/', (req, res) => {
   })
 
   app.io.once('connection', (socket) => {
-    console.log('Client connected!')
-
+	// When connected, do something
     socket.on('disconnect', function () {
-      console.log('User disconnected')
+	// When disconnected, do something
     })
   })
 })
