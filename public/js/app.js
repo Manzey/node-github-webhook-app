@@ -7,10 +7,10 @@ window.onload = function () {
       let issueTemp = document.getElementById('issueTemp')
       let issueClone = issueTemp.content.cloneNode(true)
       issueClone.getElementById('issueLink').href = body.issue.html_url
-      issueClone.getElementById('issueLink').innerHTML = body.issue.user.login
-      issueClone.getElementById('issueTitle').innerHTML = body.issue.title
-      issueClone.getElementById('issueCreated').innerHTML = moment(body.issue.created_at).format('YYYY-MM-DD, h:mm a')
-      issueClone.getElementById('issueUpdated').innerHTML = moment(body.issue.updated_at).format('YYYY-MM-DD, h:mm a')
+      issueClone.getElementById('issueLink').textContent = body.issue.user.login
+      issueClone.getElementById('issueTitle').textContent = body.issue.title
+      issueClone.getElementById('issueCreated').textContent = moment(body.issue.created_at).format('YYYY-MM-DD, h:mm a')
+      issueClone.getElementById('issueUpdated').textContent = moment(body.issue.updated_at).format('YYYY-MM-DD, h:mm a')
       issueList.prepend(issueClone)
       if (body.action === 'opened') { notify('Issue opened!', body.issue.html_url, body.issue.title, body.issue.user.login) }
 
@@ -38,9 +38,9 @@ function notify (action, titleLink, titleBody, user) {
   let notificationList = document.getElementById('notificationList')
   let notifyTemp = document.getElementById('notifyTemp')
   let notifyClone = notifyTemp.content.cloneNode(true)
-  notifyClone.getElementById('notifyAction').innerHTML = action
+  notifyClone.getElementById('notifyAction').textContent = action
   notifyClone.getElementById('notifyTitle').href = titleLink
-  notifyClone.getElementById('notifyTitle').innerHTML = titleBody
-  notifyClone.getElementById('notifyUser').innerHTML = user
+  notifyClone.getElementById('notifyTitle').textContent = titleBody
+  notifyClone.getElementById('notifyUser').textContent = user
   notificationList.prepend(notifyClone)
 }
