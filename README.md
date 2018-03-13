@@ -42,7 +42,9 @@ And for verifying Github posts I use "github-express-webhook-verifying", which c
 This is a very small module, meaning that it does not have many users. So I had to go into the source code and review to made sure nothing shady was going on. I read the source code and understood what it was doing and that it wasn't hijacking data or whatever.  
 
 And I also use two modules for dateformating - one is moment, which I use to format dates in the client-script for notifications etc. And then I am using a module for handlebars, which adds functionality to format the date in the template-file.  
-Moment is a very larger module that is heavily used with over 17 million downloads this month, it is worked on alot with alot of traffic. And the handlebars module simply allows for Moment usage in the template file.
+Moment is a very larger module that is heavily used with over 17 million downloads this month, it is worked on alot with alot of traffic. And the handlebars module simply allows for Moment usage in the template file.  
+  
+I have also run the nps module to check for vulnerabilities and it the known vulnerabilities did not concern me as much as I do not deal with alot of user input. The user input I take is made into a string and not rendered as HTML.
 
 ## Have you implemented any extra features (see below)? If so, describe them. 
 N/A
