@@ -1,8 +1,8 @@
-# dl222is-examination-3
+# About  
+This application was made as a final examination for a course during my second year at the Linnaeus University.  
+You can run this application locally to see the general structure of it, but you won't get full functionality since it needs to be accessible by the webhook to function properly.  
+Below here you can read some of my report about how the application works and how it is set-up.
 
-## What is the address to your application?  
-https://159.65.81.22/ or http://159.65.81.22  
-Redirecting is on so it will end up using https anyways.
 
 ## Describe what you have done to make your application secure, both in code and when configuring your application server
 As we're working with webhooks we listen to incoming POST-requests and that means that literally anyone can send requests to my server and that wouldn't be good.
